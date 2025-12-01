@@ -41,11 +41,11 @@ def view_resume():
 @app.route('/download-resume')
 def download_resume():
     try:
-        path = os.path.join(app.static_folder, 'Resume-prasanna.pdf')
+        path = os.path.join(app.static_folder, 'Resume_Prasanna_NR.pdf')
         if os.path.exists(path):
             return send_file(path, as_attachment=True, download_name="Prasanna_NR_Resume.pdf")
         else:
-            path = os.path.join(app.static_folder, 'Resume-prasanna (1).pdf')
+            path = os.path.join(app.static_folder, 'Resume_Prasanna_NR (1).pdf')
             if os.path.exists(path):
                 return send_file(path, as_attachment=True, download_name="Prasanna_NR_Resume.pdf")
             else:
