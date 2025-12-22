@@ -1,0 +1,241 @@
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block !important;
+  font-weight: 700 !important;
+}
+
+
+.nav-link.active {
+  color: #2563eb !important;
+  font-weight: 600;
+}
+
+.dark .nav-link.active {
+  color: #60a5fa !important;
+}
+
+
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.dark .text-gray-800 {
+  color: #f9fafb;
+}
+
+.dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5db;
+}
+
+.dark .text-gray-500 {
+  color: #9ca3af;
+}
+
+/* Image styling */
+article img.object-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover effects */
+article:hover {
+  transform: translateY(-4px);
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+
+img[alt="python"],
+img[alt="sql"],
+img[alt="c"],
+img[alt="flask"],
+img[alt="firebase"],
+img[alt="colab"],
+img[alt="powerbi"],
+img[alt="frameworks-tools"] {
+  filter: none !important;
+}
+
+
+#education .text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+#education .text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+
+#projects .flex.justify-start {
+  justify-content: flex-start;
+}
+
+
+#themeToggle + a {
+  transition: all 0.3s ease;
+}
+
+
+.bg-gray-50 img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+#contact .flex.items-center {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+
+#contact .p-4.bg-white {
+  align-items: flex-start;
+}
+
+
+#contact .text-left {
+  text-align: left;
+}
+
+
+#about h1 .text-blue-600 {
+  color: #2563eb;
+}
+
+.dark #about h1 .text-blue-400 {
+  color: #60a5fa;
+}
+
+
+.dark #about h1,
+.dark #about h2 {
+  color: #f9fafb !important;
+}
+
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
