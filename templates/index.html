@@ -324,59 +324,75 @@
     </div>
 
     <!-- Second Row - 2 Projects (CHANGED from md:grid-cols-3 to md:grid-cols-2) -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Project 4: Employee Presence Dashboard -->
-      <article class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105">
-        <div class="h-40 bg-gray-100 dark:bg-gray-700 relative">
-          <img src="{{ url_for('static', filename='images/power_BI.png') }}" alt="Employee Presence Dashboard" class="w-full h-full object-cover">
-        </div>
-        <div class="p-5">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Employee Presence Dashboard</h3>
-            <a href="https://github.com/Prasanna-NR/Employee_Presence_Analysis" target="_blank" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" title="View on GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 .5C5.65.5.5 5.66.5 12.01c0 5.12 3.32 9.46 7.94 10.98.58.1.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.23.71-3.91-1.56-3.91-1.56-.53-1.36-1.28-1.72-1.28-1.72-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.76 2.7 1.25 3.36.96.11-.75.4-1.25.72-1.54-2.58-.29-5.29-1.29-5.29-5.74 0-1.27.46-2.31 1.22-3.13-.12-.3-.53-1.52.12-3.17 0 0 .99-.32 3.25 1.19a11.2 11.2 0 0 1 5.91 0c2.26-1.51 3.24-1.19 3.24-1.19.65 1.65.24 2.87.12 3.17.76.82 1.22 1.86 1.22 3.13 0 4.46-2.72 5.44-5.31 5.72.41.35.77 1.05.77 2.12 0 1.53-.01 2.77-.01 3.15 0 .31.21.67.80.56 4.62-1.52 7.94-5.86 7.94-10.98C23.5 5.66 18.35.5 12 .5z"/>
-              </svg>
-            </a>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 leading-justify">Developed an interactive Power BI dashboard to analyze employee attendance, visualizing presence %, WFH rates, and sick leave trends, enabling HR insights through monthly, daily, and individual performance analysis.</p>
-          <div class="mt-3 flex flex-wrap gap-1">
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">PowerBI</span>
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">DAX</span>
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Data Modelling</span>
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Data Visualization</span>
-          </div>
-        </div>
-      </article>
+    <!-- Second Row - 2 Projects + Empty Column -->
+<div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Project 5: Laser Coordinate System -->
-      <article class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105">
-        <div class="h-40 bg-gray-100 dark:bg-gray-700 relative">
-          <img src="{{ url_for('static', filename='images/laser.jpeg') }}" alt="Laser Coordinate System" class="w-full h-full object-cover">
-        </div>
-        <div class="p-5">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Laser Coordinate System</h3>
-            <a href="#" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" title="Project Details">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 leading-justify">Developed a Laser Transmitter and Receiver Signal Coordination System using Raspberry Pi for real-time, accurate terrain profiling. Created graphical representations of land surfaces for precise land levelling in agriculture.</p>
-          <div class="mt-3 flex flex-wrap gap-1">
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Python</span>
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Raspberry Pi</span>
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Laser System</span>
-            <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Precision Agriculture</span>
-          </div>
-        </div>
-      </article>
+  <!-- Project 4: Employee Presence Dashboard -->
+  <article class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105">
+    <div class="h-40 bg-gray-100 dark:bg-gray-700 relative">
+      <img src="{{ url_for('static', filename='images/power_BI.png') }}"
+           alt="Employee Presence Dashboard"
+           class="w-full h-full object-cover">
     </div>
-  </div>
-</section>
+
+    <div class="p-5">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+          Employee Presence Dashboard
+        </h3>
+        <a href="https://github.com/Prasanna-NR/Employee_Presence_Analysis"
+           target="_blank"
+           class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .5C5.65.5.5 5.66.5 12.01c0 5.12 3.32 9.46 7.94 10.98.58.1.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.23.71-3.91-1.56-3.91-1.56-.53-1.36-1.28-1.72-1.28-1.72-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.76 2.7 1.25 3.36.96.11-.75.4-1.25.72-1.54-2.58-.29-5.29-1.29-5.29-5.74 0-1.27.46-2.31 1.22-3.13-.12-.3-.53-1.52.12-3.17 0 0 .99-.32 3.25 1.19a11.2 11.2 0 0 1 5.91 0c2.26-1.51 3.24-1.19 3.24-1.19.65 1.65.24 2.87.12 3.17.76.82 1.22 1.86 1.22 3.13 0 4.46-2.72 5.44-5.31 5.72.41.35.77 1.05.77 2.12 0 1.53-.01 2.77-.01 3.15 0 .31.21.67.80.56 4.62-1.52 7.94-5.86 7.94-10.98C23.5 5.66 18.35.5 12 .5z"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        Interactive Power BI dashboard analyzing employee attendance, WFH trends,
+        sick leaves, and presence percentage for HR insights.
+      </p>
+
+      <div class="mt-3 flex flex-wrap gap-1">
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Power BI</span>
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">DAX</span>
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Data Analysis</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 5: Laser Coordinate System -->
+  <article class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105">
+    <div class="h-40 bg-gray-100 dark:bg-gray-700 relative">
+      <img src="{{ url_for('static', filename='images/laser.jpeg') }}"
+           alt="Laser Coordinate System"
+           class="w-full h-full object-cover">
+    </div>
+
+    <div class="p-5">
+      <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">
+        Laser Coordinate System
+      </h3>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        Laser transmitter and receiver coordination system using Raspberry Pi
+        for real-time terrain profiling and precision land leveling.
+      </p>
+
+      <div class="mt-3 flex flex-wrap gap-1">
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Python</span>
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Raspberry Pi</span>
+        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Laser System</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Empty Column (keeps 3-column layout) -->
+  <div class="hidden md:block"></div>
+
+</div>
+
 <!-- EDUCATION -->
 <!DOCTYPE html>
 <html lang="en">
