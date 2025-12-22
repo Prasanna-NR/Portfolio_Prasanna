@@ -262,10 +262,11 @@
         </div>
       </article>
 
-      <!-- Project 2: SecureAuth -->
+      <!-- Project 2: SecureAuth - FIXED IMAGE -->
       <article class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105">
-        <div class="h-40 bg-gray-100 dark:bg-gray-700 relative">
-          <img src="{{ url_for('static', filename='images/secureauth.svg') }}" alt="SecureAuth" class="w-full h-full object-cover">
+        <div class="h-40 bg-gray-100 dark:bg-gray-700 relative flex items-center justify-center">
+          <!-- Changed object-cover to object-contain for SVG -->
+          <img src="{{ url_for('static', filename='images/secureauth.svg') }}" alt="SecureAuth" class="max-w-full max-h-full object-contain p-4">
         </div>
         <div class="p-5">
           <div class="flex justify-between items-start mb-2">
@@ -324,8 +325,8 @@
       </article>
     </div>
 
-    <!-- Second Row - 2 Projects -->
-    <div class="grid md:grid-cols-3 gap-6">
+    <!-- Second Row - 2 Projects (CHANGED from md:grid-cols-3 to md:grid-cols-2) -->
+    <div class="grid md:grid-cols-2 gap-6">
       <!-- Project 4: Employee Presence Dashboard -->
       <article class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105">
         <div class="h-40 bg-gray-100 dark:bg-gray-700 relative">
