@@ -1,29 +1,36 @@
+/* style.css - Optimized Version */
+
+/* Base transitions - less aggressive */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Specific text transitions for better performance */
+a, button, .nav-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
 
+/* Gradient text - fixed for better compatibility */
 .gradient-text {
-  background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: transparent !important;
-  display: inline-block !important;
-  font-weight: 700 !important;
+  background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-weight: 700;
 }
 
-
-.nav-link.active {
-  color: #2563eb !important;
+/* Navigation - higher specificity */
+nav .nav-link.active {
+  color: #2563eb;
   font-weight: 600;
 }
 
-.dark .nav-link.active {
-  color: #60a5fa !important;
+.dark nav .nav-link.active {
+  color: #60a5fa;
 }
 
-
+/* Dark mode base */
 .dark {
   color-scheme: dark;
 }
@@ -33,7 +40,11 @@
   color: #f9fafb;
 }
 
-.dark .text-gray-800 {
+/* Dark mode text colors - more specific */
+.dark .text-gray-800,
+.dark h1:not(.gradient-text),
+.dark h2:not(.gradient-text),
+.dark h3:not(.gradient-text) {
   color: #f9fafb;
 }
 
@@ -41,7 +52,8 @@
   color: #e5e7eb;
 }
 
-.dark .text-gray-600 {
+.dark .text-gray-600,
+.dark p:not(.gradient-text) {
   color: #d1d5db;
 }
 
@@ -49,193 +61,221 @@
   color: #9ca3af;
 }
 
-/* Image styling */
-article img.object-cover {
-  object-fit: cover;
+/* Projects section - fixed issues */
+#projects .grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Project cards - ensure consistent height */
+#projects article {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dark #projects article:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+#projects article .h-40 {
+  height: 160px;
+  overflow: hidden;
+}
+
+#projects article img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-/* Hover effects */
-article:hover {
-  transform: translateY(-4px);
+/* Skills section - fix image display */
+#skills .bg-gray-50 img,
+#skills .dark .bg-gray-700 img {
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
 }
 
-/* Custom scrollbar for dark mode */
-.dark ::-webkit-scrollbar {
+/* Education timeline fix */
+#education .relative.pl-16 {
+  z-index: 2;
+}
+
+#education .absolute.left-3 {
+  z-index: 10;
+}
+
+/* Contact form improvements */
+#contact form input,
+#contact form textarea {
+  transition: border-color 0.3s ease;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark #contact form input:focus,
+.dark #contact form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
   width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
 .dark ::-webkit-scrollbar-track {
   background: #1f2937;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
 .dark ::-webkit-scrollbar-thumb {
   background: #4b5563;
-  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
 
-
+/* Responsive fixes */
 @media (max-width: 768px) {
-  .grid-cols-3 {
+  /* Projects grid */
+  #projects .md\:grid-cols-3,
+  #projects .md\:grid-cols-2 {
     grid-template-columns: 1fr;
+  }
+  
+  /* Skills grid */
+  #skills .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Education timeline */
+  #education .relative.pl-16 {
+    padding-left: 3rem;
+  }
+  
+  /* Contact section */
+  #contact .lg\:grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
-
-button:focus,
-a:focus,
-input:focus,
-textarea:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-
+/* Print styles */
 @media print {
   .no-print {
     display: none !important;
   }
+  
+  body {
+    color: #000 !important;
+    background: #fff !important;
+  }
+  
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
 }
 
-
-img[alt="python"],
-img[alt="sql"],
-img[alt="c"],
-img[alt="flask"],
-img[alt="firebase"],
-img[alt="colab"],
-img[alt="powerbi"],
-img[alt="frameworks-tools"] {
-  filter: none !important;
+/* Accessibility - focus styles */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
 
-
-#education .text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Accounts for fixed nav */
 }
 
-#education .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+/* Section spacing */
+section {
+  scroll-margin-top: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-
-#projects .flex.justify-start {
-  justify-content: flex-start;
+@media (min-width: 768px) {
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
+/* Loading animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-#themeToggle + a {
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Fix for SecureAuth SVG image */
+#projects article .h-40.bg-gray-100.dark\\:bg-gray-700.relative.flex img {
+  object-fit: contain !important;
+  padding: 1rem;
+}
+
+/* Ensure consistent button styles */
+#themeToggle,
+#contact button[type="submit"],
+a[href*="download_resume"] {
   transition: all 0.3s ease;
 }
 
-
-.bg-gray-50 img {
-  max-width: 100%;
-  height: auto;
+#themeToggle:hover,
+#contact button[type="submit"]:hover,
+a[href*="download_resume"]:hover {
+  transform: scale(1.05);
 }
 
-
-#contact .flex.items-center {
-  justify-content: flex-start;
-  text-align: left;
+/* Typography consistency */
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-
-#contact .p-4.bg-white {
-  align-items: flex-start;
+p {
+  line-height: 1.6;
 }
 
-
-#contact .text-left {
-  text-align: left;
-}
-
-
-#about h1 .text-blue-600 {
-  color: #2563eb;
-}
-
-.dark #about h1 .text-blue-400 {
-  color: #60a5fa;
-}
-
-
-.dark #about h1,
-.dark #about h2 {
-  color: #f9fafb !important;
-}
-
-
-section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+/* Container max-width for better readability */
+main > section > div {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
